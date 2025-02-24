@@ -8,20 +8,16 @@ namespace CRUD_MVC.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    //Instancia de la clase appDbContext que es la representación en codigo de la BD
-    private readonly AppDbContext appDbContext;
-
     //Constructore en el que se inicializa
-    public HomeController(ILogger<HomeController> logger, AppDbContext _dbContext)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        appDbContext = _dbContext;
     }
 
     public IActionResult Index()
     {
-        var alumnos = appDbContext.Alumnos.ToList();
-        return View(alumnos);
+        
+        return View();
     }
 
     public IActionResult Privacy()

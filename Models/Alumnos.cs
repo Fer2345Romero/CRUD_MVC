@@ -4,7 +4,8 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace CRUD_MVC.Models
 {
-    public class Alumno
+    //Esta es la clase que representa la tabla Alumno en la BD
+    public class Alumnos:BaseModel
     {
         #region Propiedades
         [Key]
@@ -24,7 +25,7 @@ namespace CRUD_MVC.Models
         #endregion Propiedades
 
         #region Constructor
-        public Alumno(string nombres, int edad, string apellidos, DateTime fechaNacimiento)
+        public Alumnos(string nombres, int edad, string apellidos, DateTime fechaNacimiento)
         {
             Nombres = nombres;
             Edad = edad;

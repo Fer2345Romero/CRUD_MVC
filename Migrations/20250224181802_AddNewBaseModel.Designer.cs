@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUD_MVC.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250224000640_InicialCreate")]
-    partial class InicialCreate
+    [Migration("20250224181802_AddNewBaseModel")]
+    partial class AddNewBaseModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace CRUD_MVC.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CRUD_MVC.Models.Alumno", b =>
+            modelBuilder.Entity("CRUD_MVC.Models.Alumnos", b =>
                 {
                     b.Property<int>("AlumnoId")
                         .ValueGeneratedOnAdd()
@@ -44,11 +44,27 @@ namespace CRUD_MVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CreateBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Edad")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("Edited")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EditedBy")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("FechaNacimiento")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Nombres")
                         .IsRequired()
