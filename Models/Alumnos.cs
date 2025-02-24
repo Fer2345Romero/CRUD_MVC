@@ -11,20 +11,39 @@ namespace CRUD_MVC.Models
         [Key]
         public int AlumnoId { get; set; }
         [NotNull]
+        [Required(ErrorMessage = "El campo Nombres es requerido")]
         public string Nombres { get; set; }
         [NotNull]
+        [Required(ErrorMessage = "El campo Apellidos es requerido")]
+        public string Apellidos { get; set; }
+
+        [NotNull]
+        [Required(ErrorMessage = "El campo Edad es requerido")]
         public int Edad { get; set; }
         [NotNull]
+        [Required(ErrorMessage = "El campo Carnet es requerido")]
         public string Carnet { get; set; }
+        [Required(ErrorMessage = "El campo Cantidad de Materias es requerido")]
         public int CantidaddMaterias { get; set; }
+        [Required(ErrorMessage = "El campo Ciclo es requerido")]
         public int ciclo { get; set; }
-        public string Apellidos { get; set; }
+        [Required(ErrorMessage = "El campo Fecha de nacimiento es requerido")]
         public DateTime FechaNacimiento { get; set; }
         [NotMapped]
         public string NombreCompleto { get; set; }
         #endregion Propiedades
 
+
+
+
         #region Constructor
+        public Alumnos()
+        {
+            FechaNacimiento = DateTime.Now.Date;
+            IsActive = true;
+            Created = DateTime.Now;
+            CreateBy = "Admin";
+        }
         public Alumnos(string nombres, int edad, string apellidos, DateTime fechaNacimiento)
         {
             Nombres = nombres;

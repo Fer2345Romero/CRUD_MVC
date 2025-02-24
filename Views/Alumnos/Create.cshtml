@@ -1,0 +1,59 @@
+﻿@model Alumnos;
+
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a asp-controller="Home" asp-action="Index">Home</a>
+		</li>
+		<li class="breadcrumb-item">
+			<a asp-controller="Alumnos" asp-action="Index">Index</a>
+
+		</li>
+		<li class="breadcrumb-item">Agregar nuevo registro</li>
+	</ol>
+</nav>
+
+<form asp-action="Create" asp-controller="Alumnos" method="POST">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input type="text" class="form-control" asp-for="Nombres" placeholder="Nombres" aria-label="Alumno">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input type="text" class="form-control" asp-for="Apellidos" placeholder="Apellidos" aria-label="Apellidos">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-list"></i></span>
+        <input type="number" class="form-control" asp-for="Edad" placeholder="Edad" aria-label="Edad" value="">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-card-list"></i></span>
+        <input type="text" class="form-control" asp-for="Carnet" placeholder="Carnet" aria-label="Carnet">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-hash"></i></span>
+        <input type="number" class="form-control" asp-for="CantidaddMaterias" placeholder="Cantidad de Materias" aria-label="CantidaddMaterias" value="">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-hash"></i></span>
+        <input type="number" class="form-control" asp-for="ciclo" placeholder="Ciclo" aria-label="ciclo" value="">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+        <input type="date" class="form-control" asp-for="FechaNacimiento" aria-label="FechaNacimiento">
+    </div>
+
+    <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> Guardar información </button>
+    </form>
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+    }
