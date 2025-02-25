@@ -13,7 +13,10 @@
 	</ol>
 </nav>
 
-<form asp-action="Create" asp-controller="Alumnos" method="POST">
+<input type="hidden" asp-for="AlumnoId" value="@Model." placeholder="AlumnoId" aria-label="Edad">
+
+
+<form asp-action="UpSert" asp-controller="Alumnos" method="POST">
     <div asp-validation-summary="All"> 
         <i class="bi bi-exclation-triangle-fill"></i>
     </div>
