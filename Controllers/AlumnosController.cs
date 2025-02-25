@@ -19,6 +19,7 @@ namespace CRUD_MVC.Controllers
             List<Alumnos> alumnos = _dbConnetion.Alumnos.ToList();
             return View(alumnos);
         }
+        [HttpGet]
         public IActionResult Create()
         {
             Alumnos alumno = new();
@@ -29,6 +30,7 @@ namespace CRUD_MVC.Controllers
 
         public IActionResult Create(Alumnos model)
         {
+            //remover propiedad --No se esta ocupando 
             ModelState.Remove("NombreCompleto");
             if (ModelState.IsValid)
             {

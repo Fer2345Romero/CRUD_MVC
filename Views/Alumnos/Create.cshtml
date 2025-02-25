@@ -14,7 +14,9 @@
 </nav>
 
 <form asp-action="Create" asp-controller="Alumnos" method="POST">
-    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <div asp-validation-summary="All"> 
+        <i class="bi bi-exclation-triangle-fill"></i>
+    </div>
 
 
     <div class="input-group mb-3">
@@ -29,7 +31,7 @@
 
     <div class="input-group mb-3">
         <span class="input-group-text"><i class="bi bi-list"></i></span>
-        <input type="number" class="form-control" asp-for="Edad" placeholder="Edad" aria-label="Edad" value="">
+        <input type="number" class="form-control" asp-for="Edad" value="@((Model.Edad == 0)? string.Empty : Model.Edad)" placeholder="Edad" aria-label="Edad">
     </div>
 
     <div class="input-group mb-3">
@@ -39,12 +41,12 @@
 
     <div class="input-group mb-3">
         <span class="input-group-text"><i class="bi bi-hash"></i></span>
-        <input type="number" class="form-control" asp-for="CantidaddMaterias" placeholder="Cantidad de Materias" aria-label="CantidaddMaterias" value="">
+        <input type="number" class="form-control" asp-for="CantidaddMaterias" value="@((Model.CantidaddMaterias == 0)? string.Empty : Model.CantidaddMaterias)" placeholder="Cantidad de Materias" aria-label="CantidaddMaterias">
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text"><i class="bi bi-hash"></i></span>
-        <input type="number" class="form-control" asp-for="ciclo" placeholder="Ciclo" aria-label="ciclo" value="">
+        <input type="number" class="form-control" asp-for="ciclo" value="@((Model.ciclo == 0)? string.Empty : Model.ciclo)" placeholder="Ciclo" aria-label="ciclo">
     </div>
 
     <div class="input-group mb-3">
